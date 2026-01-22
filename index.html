@@ -27,13 +27,28 @@
       <li>連絡してくる人とかいません</li>
     </ul>
 
-    <p>h1,2,..,6の比較</p>
-    <h1>こんばんは</h1>
-    <h2>こんばんは</h2>
-    <h3>こんばんは</h3>
-    <h4>こんばんは</h4>
-    <h5>こんばんは</h5>
-    <h6>こんばんは</h6>
-    <!--↑後で消しといてねー-->
+    <p>もしかしてクリッカーみたいなの作れる？</p>
+    <button id="clickerButton">ボタンだよ</button>
+    <button id="upgrade">1クリックあたりの増加量がアップグレード数増える</button>
+    <p id="hyooji"></p>
+    <script>
+      let counts = 0;
+      let upgrade = 0;
+      document.getElementById("clickerButton").addEventListener(
+        "click",
+        () => {
+          counts += (upgrade + 1);
+          document.getElementById("hyooji").textContent = counts + "で" + upgrade + "個アップグレードがあるよ";
+        }
+      )
+
+      document.getElementById("upgrade").addEventListener(
+        "click",
+        () => {
+          upgrade++;
+          document.getElementById("hyooji").textContent = counts + "で" + upgrade + "個アップグレードがあるよ";
+        }
+      )
+    </script>
   </body>
 </html>
